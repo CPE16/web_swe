@@ -1,0 +1,95 @@
+.mainpage{
+	position:relative;
+	margin: 5px auto;
+	box-shadow: 0px 2px 2px 1px #9C9C9C;
+	background-color:#e4f0f1;
+	height:68%;
+	max-width:75%;
+}
+.frame-main{
+	position:absolute;
+	border-radius: 50px;
+	top:10%;
+	left:10%;
+	box-shadow: 0px 0px 1px 1px #36D7B7;
+	background-color:#F8F8FF;
+	height:80%;
+	width:80%;
+}
+.form-group{
+	position:relative;
+	top:30px;
+	//background-color:#95a5a6;
+	margin: 0 auto;
+	width: 300px;
+	height: 50px;
+}
+.textbox { 
+    border: 1px solid #c4c4c4; 
+    height: 40px; 
+    width: 275px; 
+    font-size: 13px; 
+    padding: 4px 4px 4px 4px; 
+	background-color:#EEEEEE;
+    border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    box-shadow: 0px 0px 8px #d9d9d9; 
+    -moz-box-shadow: 0px 0px 8px #d9d9d9; 
+    -webkit-box-shadow: 0px 0px 8px #d9d9d9; 
+} 
+
+.textbox:focus { 
+    outline: none; 
+    border: 1px solid #7bc1f7; 
+    box-shadow: 0px 0px 8px #7bc1f7; 
+    -moz-box-shadow: 0px 0px 8px #7bc1f7; 
+    -webkit-box-shadow: 0px 0px 8px #7bc1f7; 
+}
+.botton { 
+    border: 1px solid #c4c4c4; 
+    height: 40px; 
+    width: 275px; 
+	 color: #ecf0f1;
+	background-color:#019875;
+    font-size: 13px; 
+    padding: 4px 4px 4px 4px; 
+    border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    box-shadow: 0px 0px 8px #d9d9d9; 
+    -moz-box-shadow: 0px 0px 8px #d9d9d9; 
+    -webkit-box-shadow: 0px 0px 8px #d9d9d9; 
+	
+	transition: background-color 0.6s ease;
+	transition:box-shadow 0.6s ease;
+	 -webkit-transition: background-color 500ms ease;
+    -moz-transition: background-color 500ms ease;
+    -o-transition: background-color 500ms ease;
+    transition: background-color 500ms ease;
+} 
+ 
+.botton:hover { 
+    outline: none; 
+	background-color:#2ABB9B;
+	 box-shadow: 0px 2px 2px 1px #d9d9d9; 
+	color:#FFFFFF;
+   
+}
+.link{
+	font-family: AngsanaUPC, MS Sans Serif;
+	font-size:22px;
+	color:#2cc36b;
+}
+.link:hover{
+	color:#3498db;
+}
+.fooster{
+	position:relative;
+	box-shadow: 0px 2px 2px 2px #9C9C9C;
+	top:0%;
+	margin: 5px auto;
+	background-color:#f9bf3b;
+	height:65px;
+	max-width:75%;
+}

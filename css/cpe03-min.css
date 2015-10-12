@@ -1,0 +1,146 @@
+.mainpage{
+	position:relative;
+	margin: 5px auto;
+	box-shadow: 0px 2px 2px 1px #9C9C9C;
+	background-color:#e4f0f1;
+	height:190%;
+	max-width:75%;
+}
+.submain1{
+	position:relative;
+	box-shadow: 0px 2px 2px 1px #9C9C9C;
+	background-color:#F9BF3B;
+	margin: 4% auto;
+	top:8%;
+	height:17%;
+	width:80%;
+}
+.subheader{
+	position:absolute;
+	//box-shadow: 0px 2px 2px 1px #9C9C9C;
+	//box-shadow: 0px 2px 2px 1px #9C9C9C;
+	background-color:#F27935;
+	font-family: AngsanaUPC, MS Sans Serif;
+	font-size:22px;
+	top:-15%;
+	left:0%;
+	height:15%;
+	width:30%;
+}
+.submain2{
+	position:relative;
+	//box-shadow: 0px 2px 2px 1px #9C9C9C;
+	//background-color:#F9BF3B;
+	margin: 4% auto;
+	top:8%;
+	height:15%;
+	width:80%;
+}
+.selection{
+    background: white; 
+    border: 1px solid #DDD; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px #DDD inset; 
+    color: #666;
+	top:10%;	
+    outline: none; 
+    height:65%; 
+    width: 95%; 
+
+}
+.selection:focus{
+    background: white; 
+    border: 1px solid #2ecc71; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px #2ecc71 inset; 
+    color: #666;
+
+}
+.show_text{ 
+    background-color: transparent; 
+    border-width: 0px 0px 1px 0px; 
+    border-style:solid;	
+    color:#FFFFFF;	
+    outline: 0; 
+    height:90%; 
+    width: 95%; 
+	font-size: 16px;
+   }
+.textbox { 
+    background: white; 
+    border: 1px solid #DDD; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px #DDD inset; 
+    color: #666;
+	top:10%;	
+    outline: none; 
+    height:90%; 
+    width: 95%; 
+	font-size: 16px;
+   }
+ .textbox:focus { 
+    background: white; 
+    border: 1px solid #2ecc71; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px #2ecc71 inset; 
+    color: #666;
+   }
+.botton-div{
+	position:relative;
+	margin:20px auto;
+	//border: 1px solid #FFFFFF;
+	border-radius:13px;
+	transition: background-color 0.5s ease;
+	 -webkit-transition: background-color 500ms ease;
+    -moz-transition: background-color 500ms ease;
+    -o-transition: background-color 500ms ease;
+    transition: background-color 500ms ease;
+	background-color:#FFFFFF;
+	height:45px;
+	max-width:30%;
+	color:#2980b9;
+	font-family: AngsanaUPC, MS Sans Serif;
+	font-size:22px;
+}
+.botton-div:hover{
+	background-color:#01DFA5;
+	box-shadow: 0px 2px 2px 0.04em #D2D7D3;
+	color: #ffffff;
+} 
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 350px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 12px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+
+.styled-select.slate {
+   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+   height: 34px;
+   width: 350px;
+}
+
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 350px;
+}
+.fooster{
+	position:relative;
+	box-shadow: 0px 2px 2px 2px #9C9C9C;
+	top:0%;
+	margin: 5px auto;
+	background-color:#f9bf3b;
+	height:65px;
+	max-width:75%;
+}
