@@ -40,11 +40,14 @@
       					<div class="panel-body">
       						<div class="col-lg-6">
 								<label for="i-focused" class="control-label"> ชื่อภาษาไทย </label>
-								<input type="text" value="This is focused..." class="form-control">
+								<input type="text" class="form-control" name = "name_thai" onchange = "checkThai(this.value)"/>
+								<label id = "nameThai" style="display: none">ชื่อต้องประกอบด้วยภาษาไทย และต้องไม่ประกอบด้วยเว้นวรรค</label>
+
 							</div>
 							<div class="col-lg-6">
 								<label for="i-focused" class="control-label"> ชื่อภาษาอังกฤษ </label>
-								<input type="text" value="This is focused..." class="form-control">
+								<input type="text"  class="form-control" name= "name_eng" onchange = "checkEng(this.value)"/>
+								<label id = "nameEng" style="display: none">ชื่อต้องประกอบด้วยภาษาอังกฤษ</label>
 							</div>
 						</div>
     			</div> 
@@ -84,35 +87,8 @@
 						</div>
 						<hr>
 					</div>
-						
-					<div class="row">
-                                <div class="col-lg-1">
-                                    <label>ลำดับที่</label>
-                                    <h5 class="text-center">2</h5>
-                                </div>
-                                <div class="col-lg-2">
-                                    <label>รหัสนิสิต</label>
-                                    <asp:TextBox ID="text_id2" runat="server" CssClass="form-control" ReadOnly="True"></asp:TextBox>
-                                </div>
-                                <div class="col-lg-3">
-                                    <label>ชื่อ-นามสกุล</label>
-                                    <asp:TextBox ID="text_name2" runat="server" CssClass="form-control" ReadOnly="True"></asp:TextBox>
-                                </div>
-                                <div class="col-lg-2">
-                                    <label>เบอร์โทร</label>
-                                    <asp:TextBox ID="text_tel2" runat="server" CssClass="form-control" ReadOnly="True"></asp:TextBox>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label>อีเมล์</label>
-                                    <div class="input-group">
-                                        <asp:TextBox ID="text_email2" runat="server" CssClass="form-control" ReadOnly="True"></asp:TextBox>
-                                        <span class="input-group-btn">
-                                            <asp:Button ID="btnRemove" runat="server" Text="ลบ" class="btn btn-danger" OnClick="remove" />
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
 
+		
 
 					<div class="row">
 						<div class="container">
@@ -129,7 +105,7 @@
 					        </div>
 					        <div class="col-sm-3">
 								<br>
-								<div><label> ชื่อที่พบ </label></div>
+								<label> ชื่อที่พบ </label>
 								
 							</div>
 							<div class="col-sm-2">
