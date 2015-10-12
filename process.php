@@ -2,6 +2,7 @@
 
 <?php
 require "config.php";
+
 function login($usr,$pass,$type,$pdo)
 {
 	if($type == 0)
@@ -48,3 +49,6 @@ function success($user,$url)
 		header("location: $url");// Redirecting To Other Page
 }
 ?>
+
+
+		   

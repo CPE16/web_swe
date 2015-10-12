@@ -13,8 +13,9 @@ function res(){
 <link href="css/color.css" rel="stylesheet">
 <link href="css/css_top.css" rel="stylesheet">
 
-
-
+<script src="js/input-js.js" type="text/javascript"></script>
+<script src="js/top.js" type="text/javascript"></script>
+<link href="candystrap/css/extensions.min.css" rel="stylesheet"> <!-- -->
 <?php
 }
 

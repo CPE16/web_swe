@@ -20,6 +20,14 @@
 		$email = $row['email'];
 		$phone = $row['phone'];
   	}
+
+
+  	$sth = $pdo->prepare("SELECT Student_ID FROM students"); // ลอง คิวรี่ รหัสนิสิตทุกคนเข้าใส่ อาเรย์
+  	$sth->execute();
+  	while ($row = $sth->fetch(PDO::FETCH_ASSOC)) 
+  	{
+  		$all_id[] = $row['Student_ID'];
+  	}
 ?>
 
 <html>
@@ -27,9 +35,18 @@
 <head>
 	<title>CPE01</title>
 	<?php res() ?>
+
 </head>
 
 <body>
+	<!-- <input id="typeahead-example"class="form-control" type="text" placeholder="Enter popular Indian city name"> -->
+    <!--
+       jQuery & other libraries
+    -->
+    <!-- Typeahead.js -->
+    
+
+
 	<div class="container">
 	<!-- -->
   			<div class="jumbotron">
@@ -88,40 +105,49 @@
 						<hr>
 					</div>
 
-		
+
+<!-- <div id="txtHint"><b>Person info will be listed here...</b></div>
+ -->
+<br>
 
 					<div class="row">
 						<div class="container">
 					        <div class="col-sm-3">
 					        	<label>กรอกรหัสนิสิต</label>
 					        	 <div class="input-group date">
-								    <input type="text" class="form-control" style="height: 28px;"> 
+									<input id="ff" name="ff" class="form-control" type="text"  style="height: 28px; "onchange="showUser(this.value)"> 
 								    <span class="input-group-btn"> 
-								        <button type="button" class="btn btn-default">
+								        <button type="button" class="btn btn-default" id="f">
 								            <em class="fa fa-fw fa-search "></em>
 								        </button>
 								    </span>
 								</div>
 					        </div>
-					        <div class="col-sm-3">
-								<br>
-								<label> ชื่อที่พบ </label>
-								
-							</div>
-							<div class="col-sm-2">
-								<br>
-								<div><label> เบอร์ที่พบ </label></div>
-								
-							</div>
-							<div class="col-sm-2">
-								<br>
-								<div><label> อีเมลล์ที่พบ </label></div>
-							</div>
-							<div class="col-sm-2">
+
+					        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+					        <script>
+
+							// $(document).ready(function(){
+							//     $("#f").click(function(){
+							//         //alert("Text: " + $("#typeahead-example").var());
+							//         //alert("Value: " + $("#ff").val());
+							//         //showUser(55362318);
+							//     });
+							//     $("#btn2").click(function(){
+							//         alert("HTML: " + $("#test").html());
+							//     });
+							// });
+
+
+
+							</script>
+
+					        <div id="txtHint" align = "center"><b> อิอิ </b></div>
+							<!-- <div class="col-sm-2">
 								<br>
 								<button class="btn  btn-primary btn-sm">เพิ่ม</button>
 								<button class="btn  btn-danger btn-sm">ยกเลิก</button>
-							</div>
+							</div> -->
 
 				        </div>					    	
 					</div>
@@ -131,64 +157,11 @@
     			<div id="myModal" class="modal fade" role="dialog">
 				  <div class="modal-dialog">
 
-				    <!-- Modal content-->
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal">&times;</button>
-				        <h5 class="modal-title">เพิ่มสมาชิก</h5>
-				      </div>
-				      <div class="modal-body">
-				        <label>กรอกรหัสนิสิต</label><br>
-				        <div class="col-sm-4">
-				        	 <div class="input-group date">
-							    <input type="text" class="form-control" style="height: 28px;"> 
-							    <span class="input-group-btn"> 
-							        <button type="button" class="btn btn-default">
-							            <em class="fa fa-fw fa-search hidden-xs"></em>
-							        </button>
-							    </span>
-							</div>
-				        </div>
 
-				        <br><br>
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				      </div>
-				    </div>
 
 				  </div>
 				</div>
 
-    			<div class="panel panel-primary">
-      				<div class="panel-heading">อาจารย์ที่ปรึกษาและกรรมการ</div>
-      					<div class="panel-body">
-      						<div class="col-sm-4"><label>1</label>
-      							<select class="form-control" >
-								  <option value="volvo">Volvo</option>
-								  <option value="saab">Saab</option>
-								  <option value="mercedes">Mercedes</option>
-								  <option value="audi">Audi</option>
-								</select>
-							</div>
-							<div class="col-sm-4"><label>2</label>
-								<select class="form-control" >
-								  <option value="volvo">Volvo</option>
-								  <option value="saab">Saab</option>
-								  <option value="mercedes">Mercedes</option>
-								  <option value="audi">Audi</option>
-								</select>
-							</div>
-							<div class="col-sm-4"><label>3</label>
-								<select class="form-control" >
-								  <option value="volvo">Volvo</option>
-								  <option value="saab">Saab</option>
-								  <option value="mercedes">Mercedes</option>
-								  <option value="audi">Audi</option>
-								</select>
-							</div>
-						</div>
-				</div>
 				<div class="row" align="center">
 					<div class="col-sm-12"><button type="button" class="btn btn-primary">บันทึก</button>  
 						<button type="button" class="btn btn-success disabled">บันทึกและส่งแบบฟอร์ม</button>
@@ -211,6 +184,41 @@
     <script data-cfasync="false" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script>
     <script data-cfasync="false" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script>
     <script data-cfasync="false" data-main="js/release.min" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
+
+
+
+<!-- ห้ามลบนะ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      (function($) {
+        var cities, datums;
+        datums = function(cities) {
+          return function(query, callback) {
+            var matches, regex;
+            matches = [];
+            regex = new RegExp(query, 'i');
+            $.each(cities, function(i, city) {
+              if (regex.test(city)) {
+                return matches.push({
+                  value: city
+                });
+              }
+            });
+            return callback(matches);
+          };
+        };
+		cities = [<?php echo '"'.implode('","', $all_id).'"' ?>];
+        $("#typeahead-example").typeahead({
+          highlight: true,
+          hint: true,
+          minLength: 1
+        }, {
+          displayKey: "value",
+          name: "cities",
+          source: datums(cities)
+        });
+      })(jQuery);
+    </script>
 
 </body>
 </html>
