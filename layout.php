@@ -16,6 +16,7 @@ function res(){
 <script src="js/input-js.js" type="text/javascript"></script>
 <script src="js/top.js" type="text/javascript"></script>
 <link href="candystrap/css/extensions.min.css" rel="stylesheet"> <!-- -->
+<meta charset = "utf-8">
 <?php
 }
 

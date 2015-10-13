@@ -48,6 +48,21 @@ function success($user,$url)
 		$status = "Success";
 		header("location: $url");// Redirecting To Other Page
 }
+
+
+function check_user($id,$pdo)
+{
+
+
+	$sth = $pdo->prepare("SELECT * FROM students WHERE Student_ID = :usr");
+	$sth->bindParam(':usr', $id, PDO::PARAM_STR);
+  	$sth->execute();
+  	while ($row = $sth->fetch(PDO::FETCH_ASSOC)) 
+  	{
+		return 1;
+  	}
+  	return 0;
+}
 ?>
 
 

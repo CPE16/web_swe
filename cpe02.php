@@ -1,5 +1,7 @@
 <?php
 	require "config.php";
+	$faculty2 = "g";
+	$email2 = "g";
 	session_start();
 	if(!isset($_SESSION['login_user']))
 	{
@@ -39,13 +41,17 @@
 	}
 	else;
 	if($std2 == nuLl){
-		$stdName2 = "ไม่มี";
+		$stdName2 = "";
+		$faculty2 = "";
+		$email2 = "";
 		}else{
 			
-		$sql3 = "SELECT Name,Faculty,email FROM comsystem.students WHERE Student_ID = '".$std2."'";
+	$sql3 = "SELECT Name,Faculty,email FROM comsystem.students WHERE Student_ID = '".$std2."'";
 	$query3 =  mysql_query($sql3) or die(mysql_error());
-	$rows3 =  mysql_num_rows($query3) or die("error");
+	echo $std2;
+	$rows3 =  mysql_num_rows($query3) or die("error1");
 	if($rows3 == 1){
+
 	while($r1=mysql_fetch_array($query3))
 	{
 		$stdName2 = $r1["Name"];
@@ -62,7 +68,7 @@
 	$sub = array();
 	
 	$logSql = "SELECT date,title,note,test FROM comsystem.logs ORDER BY date DESC ,date ASC LIMIT 3";
-	$logq = mysql_query($logSql) or die("error");
+	$logq = mysql_query($logSql) or die("error2");
 	$rows =  mysql_num_rows($logq);
 	if($rows == 1){
 	while($r1=mysql_fetch_assoc($logq))
