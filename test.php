@@ -66,23 +66,7 @@ $q = $_GET['q'];
 		<?php
 		die();
 	}
-	// if(canAdd($q,$pdo))
-	// {
-	// 	die("ok");
-	// }
-	// else
-	// {
-	// 	die("มึงเพิ่มไปแล้วป๊ะ");
-	// }
 
-	// if(check_prepareMember($q,$pdo))
-	// {
-	// 	die("ยังไม่มี");
-	// }
-	// else
-	// {
-	// 	die("มีแล้ว");	
-	// }
   	while ($row = $sth->fetch(PDO::FETCH_ASSOC))  
   	{
   		$found++;
@@ -97,9 +81,9 @@ $q = $_GET['q'];
 				<input type="hidden" name="sdph" id = "sdph" value="<?php  echo $row['phone']; ?>" />	
 				<input type="hidden" name="sdem" id = "sdem" value="<?php  echo $row['email']; ?>" />	
 
-				<div class="col-lg-12" id="s_id" >
+				<div class="row" id="s_id" >
 					<div class="card">
-						<div class="container" style="padding-bottom: 15px;">
+						<div class="row" style="padding-bottom: 15px;">
 							<br>
 							<div class="col-lg-2">
 								<label>รหัสนิสิต</label>
@@ -111,7 +95,7 @@ $q = $_GET['q'];
 								<div> <?php echo $row['Name']; ?> </div>
 								
 							</div>
-							<div class="col-sm-3">
+							<div class="col-sm-2">
 								<label>เบอร์โทรศัพท์</label>
 								<div> <?php echo $row['phone']; ?> </div>
 								

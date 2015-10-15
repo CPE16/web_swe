@@ -1,7 +1,7 @@
 <meta charset = "utf-8">
 
 <?php
-
+require "config.php";
 function login($usr,$pass,$type,$pdo)
 {
 	if($type == 0)
@@ -111,6 +111,21 @@ function check_user($id,$pdo)
  		$sql = "UPDATE temp SET test =:value WHERE id = 3 or id = 2";
 		$q = $pdo->prepare($sql);
 		$q->execute(array(':value'=>$value));
+ }
+
+ function count_member($pdo)
+ {	
+ 	$amount = 0;
+ 	$sth = $pdo->prepare("SELECT * FROM temp");
+    $sth->execute();
+    while ($row = $sth->fetch(PDO::FETCH_ASSOC)) 
+    {
+        if($row['test']!=0)
+        {
+          $amount++;
+        }
+    }
+    return $amount;
  }
 ?>
 
