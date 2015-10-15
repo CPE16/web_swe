@@ -1,3 +1,4 @@
+
 function check_id(id_std1)
 {
 	if (id_std1.match(/^[0-9]/)){
@@ -132,18 +133,14 @@ function CheckValue()
       })(jQuery);
 
 
- function showUser(str) {
-                        //alert("Value: " + $("#ff").val());
-
+ function showUser(str,id2) {
     if (str == "") {
         document.getElementById("txtHint").innerHTML = "";
         return;
     } else { 
         if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
         } else {
-            // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
         xmlhttp.onreadystatechange = function() {
@@ -151,7 +148,8 @@ function CheckValue()
                 document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
             }
         }
-        xmlhttp.open("GET","test.php?q="+str,true);
+        xmlhttp.open("GET","test.php?q="+str+"&id2="+id2,true);
         xmlhttp.send();
     }
 }
+

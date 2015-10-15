@@ -13,8 +13,9 @@
 
 
 
-	// $haveUser2 = check_user($std2,$pdo);
-	// $haveUser3 = check_user($std3,$pdo);
+	$haveUser2 = check_user($std2,$pdo);
+	$haveUser3 = check_user($std3,$pdo);
+
 	// echo " -> ".$haveUser2;
 	// echo " -> ".$haveUser3;
 
@@ -53,9 +54,43 @@
 	{
 		if($std1==$std2||$std1==$std3||$std2==$std3)
 		{
-			goback("สมาชิกไม่ถูกต้อง","cpe01.php");
+			goback("สมาชิกไม่ถูกต้อง1","cpe01.php");
 			die();
 		}
+	}
+	if($haveUser2 == 0 || $haveUser3 == 0)
+	{
+		if($haveUser2==0 && $haveUser3!="" && $haveUser2!="")
+		{
+			goback("สมาชิกไม่ถูกต้อง2","cpe01.php");
+			die();
+		}
+		if($haveUser3==0 && $haveUser3!="")
+		{
+			goback("สมาชิกไม่ถูกต้อง3","cpe01.php");
+			die();	
+		}
+		if($haveUser2==0 && $haveUser3==0 && $haveUser3!="" && $haveUser2!="")
+		{
+			goback("สมาชิกไม่ถูกต้อง4","cpe01.php");
+			die();	
+		}
+		if($haveUser2 == 0 && $haveUser3 == 0)
+		{
+			goback("สมาชิกไม่ถูกต้อง5","cpe01.php");
+			die();	
+		}
+		// if($haveUser2 == 0)
+		// {
+		// 	goback("สมาชิกไม่ถูกต้อง6","cpe01.php");
+		// 	die();	
+		// }
+		// if($haveUser3 == 0)
+		// {
+		// 	goback("สมาชิกไม่ถูกต้อง7","cpe01.php");
+		// 	die();	
+		// }
+
 	}
 
 

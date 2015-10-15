@@ -93,6 +93,8 @@ function showUser(str,type,pos) {
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById(<?php echo "pos"; ?>).innerHTML = xmlhttp.responseText;
+                var elem = document.getElementById("what");
+				elem.value = xmlhttp.responseText;
             }
         }
         xmlhttp.open("GET","test.php?q="+str+"&t="+type,true);
@@ -185,12 +187,29 @@ function CheckValue()
 	}
 }
 
+function CheckSubmit()
+{
+	
+	var cid2 = document.getElementById('what').value;
+	// if(cid2.length  20)
+	// {
+	// 	alert(cid2.length);
+	// 	alert("ไม่พบข้อมูลนิสิต");
+	// 	return false;
+	// }
+	var elem = document.getElementById("name_std2");
+				elem.value = xmlhttp.responseText;
+				alert(elem);
 
+				return false;
+	
+
+}
 </script>
 	</head>
 	<body>
 		<label id="txtHint"></label>
-	
+		<input id="what">
 		<div class = "titlepage">
 			<div class = "subtitle">
 				<img src="images/web.png" width="100%" height="100%">
@@ -217,7 +236,7 @@ function CheckValue()
 			</div></a>
 		</div>
 		<div class = "mainpage">
-		<form id = "cpe01" name = "cpe01" action = "cpe01-active.php" method="post">
+		<form id = "cpe01" name = "cpe01" action = "cpe01-active.php" method="post" onSubmit="return CheckSubmit();">
 			<center><font face = "ThaiSans Neue" size = "+3" color = "#446CB3"><b>CPE01-แบบเสนอหัวข้อโครงงานกรรมคอมพิวเตอร์ ปีการศึกษา 2557<b></font></center><hr><br> 
 			<div class = "submain1">
 				<div class = "subheader" align = "center">ชื่อโครงงาน</div>
@@ -350,9 +369,11 @@ function CheckValue()
 						<div class = "submain2" align = "center">
 				
 					
-				<a href="#"><div class ="botton-div" align = "center" onClick="document.forms['cpe01'].submit();">
+				<a href="#"><div class ="botton-div" align = "center">
 					<h2>ยืนยันข้อมูล</h2>
 				</div></a>
+				<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" >
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 			</div>
 		</form>
 		</div>
