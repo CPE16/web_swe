@@ -1,6 +1,16 @@
 <?php
 require "config.php";
-
+function have_a_project($id,$pdo)
+{
+	$sth = $pdo->prepare("SELECT * FROM project WHERE std1 = :id or std2 = :id or std3 = :id");
+	$sth->bindParam(':id', $id, PDO::PARAM_STR);
+  	$sth->execute();
+  	while ($row = $sth->fetch(PDO::FETCH_ASSOC)) 
+  	{
+		return true;
+  	}
+  	return false;
+}
 function login($usr,$pass,$type,$pdo)
 {
 	if($type == 0)
@@ -136,4 +146,5 @@ function success($user,$url)
  	<?php
  	}
  }
+
 ?>

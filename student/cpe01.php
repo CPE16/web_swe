@@ -3,14 +3,26 @@
    require "code_page.php";
    require "process.php";
    require "layout.php";
-
+   $pageName = "cpe01";
    session_start();
    if(!isset($_SESSION['login_user']))
    {
       header('Location: ../login.php');
       exit;
    }
+
    $id = $_SESSION['login_user'];
+   if(have_a_project($id,$pdo))
+    {
+   		?>
+   		<script type="text/javascript">
+   		window.location.href = "cpe01-view.php";
+   		</script>
+   		<?php
+   		//die();
+    }
+
+   
    reset_temp($_SESSION['login_user'],$pdo);
    $sth = $pdo->prepare("SELECT * FROM students WHERE Student_ID = :id");
    $sth->bindParam(':id', $id, PDO::PARAM_STR);
@@ -95,7 +107,7 @@
 			<span id="result"></span>
 			<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
 			<script src="js/my_script.js" type="text/javascript"></script>
-
+			
 			<div class="container">
 			
 				<div class="panel panel-primary">
@@ -113,7 +125,7 @@
 									</div>
 								</div>
 								<div id ="thaiInput" class="form-group">
-									<input  type="text" class="form-control" name = "name_thai" onchange = "checkThai(this.value)"/>	
+									<input  type="text" class="form-control" id = "name_thai"  name = "name_thai" onchange = "checkThai(this.value)"/>	
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -128,14 +140,14 @@
 									</div>
 								</div>
 								<div id ="engInput" class="form-group">
-									<input type="text"  class="form-control" name= "name_eng" onchange = "checkEng(this.value)"/>
+									<input type="text"  class="form-control" id = "name_eng" name= "name_eng" onchange = "checkEng(this.value)"/>
 								</div>
 							</div>
 						</div>
 				</div> 
 
 			<div class="panel panel-primary">
-				<div class="panel-heading">นิสิตที่จะทำโครงงาน ชิป๊ะ</div>
+				<div class="panel-heading">นิสิตผู้ทำโครงงาน</div>
 					<div class="panel-body">
 
 						<div  id="memberBoard" class="fade in"></div>	
@@ -175,7 +187,7 @@
 						<div class="col-sm-4">
 							<div id ="p02" class="form-group">
 							<select id ="pro2" name = "pro2" onchange="CheckValue()"  class="form-control">
-								<option value = "G00">กรุณาเลือกอาจารย์ที่ปรึกษาโครงงาน</option>
+								<option value = "G00">กรุณาเลือกอาจารย์ที่ปรึกษาโครงงานร่วม</option>
 								<option value = "N00">ไม่มี</option>	
 								<?php advisorList($pdo); ?>
 							</select>
@@ -184,20 +196,21 @@
 						<div class="col-sm-4">
 							<div id ="p03" class="form-group">
 							<select id ="pro3" name = "pro3" onchange="CheckValue()"  class="form-control">
-								<option value = "G00" >กรุณาเลือกอาจารย์ที่ปรึกษาโครงงาน</option>
+								<option value = "G00" >กรุณาเลือกเสนอชื่อกรรมการ</option>
 								<?php advisorList($pdo); ?>
 							</select>
 							</div>
 						</div>	
 					</div>
 			</div>
+			<div id="save"> no </div>
 			<div class="row" align="center">
 				<span id = "pro" style="display: none"><p class="text-danger">ไม่สามารถเลือกอาจารย์และกรรมการซ้ำคนได้</p></span>
 
 			</div>
 			<div class="row" align ="center">
 
-				  <button id = "submit"type="button" class="btn btn-success" onclick="CheckSubmitClick()" disabled>ยืนยัน</button>
+				  <button id = "submit" type="button" class="btn btn-success" onclick="CheckSubmitClick()" disabled>ยืนยัน</button>
 			</div>
 		</div>
 
@@ -205,9 +218,9 @@
 
         </section>
       </div>
-
+  		
       <!-- Main Footer -->
-      <?php foot('cpe01') ?>
+      <?php foot($pageName) ?>
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>

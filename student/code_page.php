@@ -22,6 +22,7 @@
 	    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 	    <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+
 	    
 	    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,7 +55,7 @@
           <?php echo $page_name; ?>
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2014-2015 <a href="about.php">ABOUT</a>.</strong> <h5>เป็นส่วนหนึ่งของรายวิชา วิศวกรรมระบบคอมพิวเตอร์ และ วิชา วิศวกรรมซอฟต์แวร์  ที่ปรึกษา <a href="http://www.ecpe.nu.ac.th/suradet/">ดร.สุรเดช จิตประไพกุลศาล</a></h5>
       	</footer>  
       <?php   
 	}

@@ -86,7 +86,30 @@ function Del(id)
 }
 function SubmitOK()
 {
-    alert("ส่งข้อไปจัดเก็บ");
+    //alert("ส่งข้อไปจัดเก็บ");
+    var nth = document.getElementById('name_thai').value ;
+    var nen = document.getElementById('name_eng').value ;
+    var p1 = document.getElementById('pro1').value;
+    var p2 = document.getElementById('pro2').value;
+    var p3 = document.getElementById('pro3').value;
+
+    if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+    } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+        
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //$('#Search_Area').addClass('animated pulse');
+                document.getElementById("save").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET","save_form.php?nth="+nth+"&nen="+nen+"&p1="+p1+"&p2="+p2+"&p3="+p3,true);
+        xmlhttp.send();
+        window.location.href = "student-page.php";
+        //alert("ok");
+        //location.reload();student-page.php
 }
 function CheckSubmitClick()
 {
