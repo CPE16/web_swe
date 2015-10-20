@@ -9,7 +9,7 @@ if(isset($_POST['username']) and isset($_POST['password']))
 	$isBind = login($user,$pass,"1",$pdo);
   	if($isBind)
   	{
-		  success($user,'student-page.php');
+		  success($user,'student/student-page.php');
   	}
   	else
   	{
